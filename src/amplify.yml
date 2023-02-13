@@ -3,11 +3,10 @@ frontend:
   phases:
     preBuild:
       commands:
-        - npm i -g pnpm
-        - pnpm i
+        - npm i
     build:
       commands:
-        - pnpm build
+        - npm build
         - mkdir -p .next/standalone
         - cp -r dist/* package.json node_modules .next/standalone 
         - ls -lah .next/standalone
