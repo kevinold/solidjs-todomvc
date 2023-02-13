@@ -10,6 +10,7 @@ frontend:
         - pnpm build
         - mkdir -p .next/standalone
         - cp -r dist/* package.json node_modules .next/standalone 
+        - ls -lah .next/standalone
   artifacts:
     baseDirectory: dist 
     files:
