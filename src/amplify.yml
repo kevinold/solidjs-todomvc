@@ -3,17 +3,17 @@ frontend:
   phases:
     preBuild:
       commands:
-        - npm i
+        - npm install -g pnpm
+        - pnpm i --frozen-lockfile
     build:
       commands:
-        - npm run build
+        - pnpm build
         - mkdir -p .next/standalone
-        - cp -r dist/* package.json node_modules .next/standalone 
+        - cp -r dist/* .next/standalone
+        - cp package-run.json .next/standalone/package.json
+        - rm -rf .next/standalone/typescript
         - ls -lah .next/standalone
   artifacts:
-    baseDirectory: dist 
+    baseDirectory: .next
     files:
       - "**/*"
-  cache:
-    paths:
-      - dist/**/*

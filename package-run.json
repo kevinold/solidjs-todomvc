@@ -1,0 +1,6 @@
+{
+    "name": "solidjs-todomvc",
+    "scripts": {
+        "start": "node server.js"
+    }
+}
