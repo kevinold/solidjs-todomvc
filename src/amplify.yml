@@ -1,0 +1,19 @@
+version: 1
+frontend:
+  phases:
+    preBuild:
+      commands:
+        - npm i -g pnpm
+        - pnpm i
+    build:
+      commands:
+        - pnpm build
+        - mkdir -p .next/standalone
+        - cp -r dist/* package.json node_modules .next/standalone 
+  artifacts:
+    baseDirectory: dist 
+    files:
+      - "**/*"
+  cache:
+    paths:
+      - dist/**/*
