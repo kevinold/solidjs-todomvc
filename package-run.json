@@ -1,5 +1,6 @@
 {
     "name": "solidjs-todomvc",
+    "type": "module",
     "scripts": {
         "start": "node server.js"
     }
